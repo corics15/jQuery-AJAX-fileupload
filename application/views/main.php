@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="col-md-12">
 								<form enctype="multipart/form-data" id="frmUpload">
 									<div class="form-group">
-										<input name="input_filename" id="input_filename" class="file-loading" type="file" data-preview-file-type="text">
+										<input name="input_filename" id="input_filename" class="file file-loading" data-allowed-file-extensions='["gif", "jpg", "png"]' type="file">
 									</div>
 									<!-- <div class="form-group">
 										<button type="submit" class="btn btn-default btn-sm"><i class="fa fa-upload"></i> Upload</button>

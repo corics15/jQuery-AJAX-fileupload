@@ -13,7 +13,9 @@ $(document).ready(function() {
 			data 	: data,
 			success : function(response) {
 				if (response == 'success') {
-					$('.msg').html('<div class="alert alert-success">File was uploaded successfully.</div>');
+					$('.msg').html('<div class="alert alert-success">File was uploaded successfully.</div>').fadeIn();
+					setTimeout(function() { $('.msg').fadeOut(); }, 1500);
+					$('.fileinput-remove-button').trigger('click');
 				} else {
 					var error = $.parseJSON(response);
 					$('.msg').html('<div class="alert alert-danger">'+error.error+'</div>');
