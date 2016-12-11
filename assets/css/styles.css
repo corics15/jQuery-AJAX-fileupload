@@ -1,3 +1,13 @@
 html, body {
 	font-family: 'Ubuntu Condensed', sans-serif;
 }
+
+.directory-contents .list-group-item {
+	border: 0;
+	padding: 5px;
+	float: left;
+}
+
+.directory-contents img {
+	height: 75px;
+}

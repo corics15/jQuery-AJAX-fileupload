@@ -33,10 +33,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 
 		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Directory Contents
+					</div>
+					<div class="panel-body show-contents">
+						<?php
+							$this->load->helper('directory');
+							$map = directory_map('./assets/uploads/');
+						?>
+						<ul class="list-group directory-contents">
+							<?php foreach ($map as $r) : ?>
+								<li class="list-group-item">
+									<img src="./assets/uploads/<?= $r ?>"
+										class="img-thumbnail"
+										data-toggle="tooltip"
+										title="<?= $r ?>">
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
 			<div class="col-md-12 md-offset-6">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Select a file to upload.
+						Select a file to upload. Only "gif, jpg, png" files are supported, 1MB max.
 					</div>
 					<div class="panel-body">
 						<div class="row">
@@ -45,9 +71,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<div class="form-group">
 										<input name="input_filename" id="input_filename" class="file file-loading" data-allowed-file-extensions='["gif", "jpg", "png"]' type="file">
 									</div>
-									<!-- <div class="form-group">
-										<button type="submit" class="btn btn-default btn-sm"><i class="fa fa-upload"></i> Upload</button>
-									</div> -->
 								</form>
 							</div>
 						</div>
